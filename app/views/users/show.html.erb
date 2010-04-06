@@ -3,4 +3,17 @@
 # and open the template in the editor.
 %>
 
-<%= @user.name %>, <%= @user.email %>
+<table calss ="profile">
+  <tr>
+    <td class ="main">
+      <h2><%= h  @user.name %></h2>
+    </td>
+    <td class ="sidebar round">
+      <strong>Name</strong> <%= h  @user.name %> <br />
+
+    </td>
+  </tr>
+
+
+</table>
+

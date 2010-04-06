@@ -4,7 +4,9 @@ describe User do
   before(:each) do
     @valid_attributes = {
       :name => "Mirek",
-      :email => "miron_w@o2.pl"
+      :email => "miron_w@o2.pl",
+      :password => "mireczek",
+      :password_confirmation => "mireczek"
     }
   end
 
@@ -61,4 +63,74 @@ describe User do
     user_identical_case.should_not be_valid
   end
   
+  describe "password validation" do
+
+    before(:each) do
+      @user = User.create!(@valid_attributes)
+    end
+
+    it "should require a password and confirmation" do
+      User.new(@valid_attributes.merge(:password => "",:password_confirmation => "" )).
+        should_not be_valid
+    end
+
+    it "should have same password connfirmation" do
+      User.new(@valid_attributes.merge(:password_confirmation => "invalid")).
+        should_not be_valid
+    end
+
+    it "should have minimal pasword lenght" do
+      short_pass = "a" * 5
+      User.new(@valid_attributes.merge(:password => short_pass)).
+        should_not be_valid
+    end
+    
+      it "should have max pasword lenght" do
+      too_long_pass = "a" * 41
+      User.new(@valid_attributes.merge(:password => too_long_pass)).
+        should_not be_valid
+    end
+  end
+
+  describe "password encription" do
+
+    before(:each) do
+      @user = User.create!(@valid_attributes)
+    end
+
+    it "should respond to encrypted password" do
+      @user.should respond_to(:encrypted_password)
+    end
+
+    it "should set the encrypted password" do
+      @user.encrypted_password.should_not be_blank
+    end
+  
+    describe "has password? method" do
+      it "should be true if the password match" do
+        @user.has_password?(@valid_attributes[:password]).should be_true
+      end
+    
+      it "should be false if the password don't match" do
+        @user.has_password?("invalid").should be_false
+      end
+    describe "authenticate method"
+
+      it "should retun nil if email and password not match" do
+        wrong_password_user = User.authenticate(@valid_attributes[:email],"wrongpass")
+        wrong_password_user.should be_nil
+      end
+
+      it "should return nill if the user doesn't exist" do
+        no_user_password = User.authenticate("wrong@domain.com","wrongpass")
+        no_user_password.should be_nil
+      end
+
+      it "should return user if authentication in ok" do
+        match_user = User.authenticate(@valid_attributes[:email],@valid_attributes[:password])
+        match_user.should == @user
+      end
+    end
+  end
+
 end
