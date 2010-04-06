@@ -86,27 +86,27 @@ ul.navigation {
 }
 
 .navigation li a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 a.signup_button {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  text-align: center;
-  width: 190px;
-  color: #fff;
-  background: #333399;
-  font-size: 150%;
-  font-weight: bold;
-  padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    width: 190px;
+    color: #fff;
+    background: #333399;
+    font-size: 150%;
+    font-weight: bold;
+    padding: 10px;
 }
 
 /* Round corners */
 
 .round {
-  -moz-border-radius:    10px;
-  -webkit-border-radius: 10px;
+    -moz-border-radius:    10px;
+    -webkit-border-radius: 10px;
 }
 
 /*  Footer */
@@ -141,4 +141,59 @@ td.sidebar {
     padding: 1em;
     vertical-align: top;
     background: #ffc;
+}
+
+/* Form */
+
+div.field, div.action {
+    margin-bottom: 10px;
+
+}
+div.field label {
+    display: table;
+}
+
+.fieldWithErrors label {
+    color: red;
+    border-color: white;
+}
+
+.fieldWithErrors input{
+    padding: 0px;
+    display: table;
+    border-color: red;
+}
+
+.fieldWithErrors {
+    margin: 0;
+}
+
+#errorExplanation {
+    width: 400px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    background-color: #c00;
+    color: #fff;
+}
+
+#errorExplanation p {
+    color: #333;
+    margin-bottom: 0;
+    padding: 5px;
+}
+
+#errorExplanation ul li {
+    font-size: 12px;
+    list-style: square;
 }
