@@ -29,10 +29,15 @@ class User < ActiveRecord::Base
   validates_length_of :password, :within => 6..40, :too_short => "Password is too short",
     :too_long => "Password is too long"
 
- before_save :encrypt_password
+  before_save :encrypt_password
 
   def has_password?(submited_password)
     encrypted_password == encrypt(submited_password)
+  end
+
+  def remember_me!
+    self.remember_token = encrypt("#{salt}--#{id}")
+    save_without_validation
   end
 
   def self.authenticate(email, submited_password)
@@ -40,23 +45,25 @@ class User < ActiveRecord::Base
     user && user.has_password?(submited_password) ? user : nil
   end
   
- # private
+  # private
 
-    def encrypt_password
+  def encrypt_password
+    unless password.nil?
       self.salt = make_salt
       self.encrypted_password = encrypt(password)
     end
+  end
 
-    def encrypt(string)
-      secure_hash("#{salt}#{string}")
-    end
+  def encrypt(string)
+    secure_hash("#{salt}#{string}")
+  end
 
-    def make_salt
-      secure_hash("#{Time.now.utc}#{password}")
-    end
+  def make_salt
+    secure_hash("#{Time.now.utc}#{password}")
+  end
 
-    def secure_hash(string)
-      Digest::SHA2.hexdigest(string)
-    end
+  def secure_hash(string)
+    Digest::SHA2.hexdigest(string)
+  end
 
 end

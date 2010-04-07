@@ -85,7 +85,7 @@ describe User do
         should_not be_valid
     end
     
-      it "should have max pasword lenght" do
+    it "should have max pasword lenght" do
       too_long_pass = "a" * 41
       User.new(@valid_attributes.merge(:password => too_long_pass)).
         should_not be_valid
@@ -114,7 +114,7 @@ describe User do
       it "should be false if the password don't match" do
         @user.has_password?("invalid").should be_false
       end
-    describe "authenticate method"
+      describe "authenticate method"
 
       it "should retun nil if email and password not match" do
         wrong_password_user = User.authenticate(@valid_attributes[:email],"wrongpass")
@@ -131,6 +131,26 @@ describe User do
         match_user.should == @user
       end
     end
+  end
+
+  describe "remember me" do
+    before(:each) do
+      @user = User.create!(@valid_attributes)
+    end
+
+    it "should have a remember_me! method" do
+      @user.should respond_to(:remember_me!)
+    end
+
+    it "should have the remember token" do
+      @user.should respond_to(:remember_token)
+    end
+
+    it "should set the remember token" do
+      @user.remember_me!
+      @user.remember_token.should_not be_nil
+    end
+    
   end
 
 end
