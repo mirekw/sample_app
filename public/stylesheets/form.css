@@ -1,0 +1,25 @@
+/* 
+    Document   : form
+    Created on : 2010-04-07, 21:27:20
+    Author     : miron
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+@font-face { font-family: "Hybrea"; font-weight: normal; src: local("Hybrea Light"), local("HybreaLt-Regular"), local("HybreaXl-Regular"), url("/fonts/hybrealight.otf") format("opentype"); }
+
+@font-face { font-family: "Hybrea Bold"; font-weight: normal; src: local("Hybrea"), local("Hybrea Regular"), local("HybreaRg-Regular"), local("Hybrea-Regular"), local("HybreaRg-Bold"), local("Hybrea-Bold"), local("Hybrea Bold"), url("/fonts/hybrea.otf") format("opentype"); }
+
+@font-face { font-family: "Corbel Bold"; font-weight: normal; src: local("Corbel Bold"), url("/fonts/corbelbold.ttf"); }
+
+@font-face { font-family: "Corbel"; font-weight: normal; src: local("Corbel"), local("Corbel Regular"), url("/fonts/corbel.ttf"); }
+

@@ -1,6 +1,6 @@
 /* 
-    Document   : custom
-    Created on : 2010-04-02, 13:42:10
+    Document   : main
+    Created on : 2010-04-07, 21:26:14
     Author     : miron
     Description:
         Purpose of the stylesheet follows.
@@ -14,7 +14,6 @@
 root { 
     display: block;
 }
-
 .container {
     width: 980px;
 }
@@ -91,7 +90,7 @@ html form p.submit p, html form fieldset.submit p, body form p.submit p, body fo
 html body #content form { padding: 0 !important; }
 html body #content form.panel-body { padding: 0 !important; }
 
-html, body { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: arial, helvetica, sans-serif; vertical-align: baseline; background-color: #1c1c1c; color: #999999; padding-bottom: 50px; min-width: 1000px; background-image: url(/images/pricing/header-shadow.png); background-repeat: repeat-x; background-position: 0px 76px; }
+html, body { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: arial, helvetica, sans-serif; vertical-align: baseline; background-color: #D8D8D8 ; color: #999999; padding-bottom: 50px; min-width: 1000px; background-position: 0px 76px; }
 html p, html fieldset label, html li, body p, body fieldset label, body li { font-size: 14px; line-height: 18px; }
 html p, body p { margin-bottom: 4px; }
 html h2, body h2 { font-size: 20px; line-height: 20px; }
@@ -120,7 +119,7 @@ li { list-style-type: none; }
 
 #flash { padding-top: 20px; margin-bottom: -30px !important; margin: 0 auto; }
 
-#header { background-color: #29264d; border-bottom-style: solid; border-bottom-width: 3px; border-bottom-color: #494573; overflow: hidden; display: inline-block; min-width: 960px; }
+#header { background-color: #585858; border-bottom-style: solid; border-bottom-width: 3px; border-bottom-color: #303030 ; overflow: hidden; display: inline-block; min-width: 960px; }
 #header { display: block; }
 #header a { color: #c9c3e6; text-decoration: none; font-weight: normal; }
 #header a:hover { color: #fff; }
@@ -130,7 +129,7 @@ li { list-style-type: none; }
 #header ul { display: block; }
 #header ul li { float: left; margin-left: 10px; }
 #header ul li:first-child { margin-left: 0; }
-#header ul li { border-left-style: solid; border-left-width: 2px; border-left-color: #534890; padding-left: 10px; font-size: 16px; }
+#header ul li { border-left-style: solid; border-left-width: 2px; border-left-color: #F0F0F0; padding-left: 10px; font-size: 16px; }
 #header ul li:first-child, #header ul li#account_login { border: none; margin-left: 0; padding-left: 0; }
 #header ul li a.active { color: #bff740; }
 #header ul li a.active:hover { color: #bff740; }
@@ -164,7 +163,7 @@ ul.submenu li a:hover { color: #eee; text-decoration: none; }
 #content .panel { margin-bottom: 20px; background-color: #272727; -moz-border-radius: 14px; -webkit-border-radius: 14px; -moz-box-shadow: 2px 2px 7px #151515; -webkit-box-shadow: 2px 2px 7px #151515; }
 #content .panel .panel-body { padding: 20px; }
 #content .panel .help { float: right; padding-top: 10px; padding-right: 10px; }
-#content .panel h2 { color: #8d79f2; background-color: #232323; padding: 10px 10px 10px 20px; margin: 0; font-weight: normal; font-family: "Hybrea", sans-serif; letter-spacing: 1px; -moz-border-radius-topright: 14px; -webkit-border-top-right-radius: 14px; -moz-border-radius-topleft: 14px; -webkit-border-top-left-radius: 14px; }
+#content .panel h2 { color: #C9C3E6; background-color: #232323; padding: 10px 10px 10px 20px; margin: 0; font-weight: normal; font-family: "Hybrea", sans-serif; letter-spacing: 1px; -moz-border-radius-topright: 14px; -webkit-border-top-right-radius: 14px; -moz-border-radius-topleft: 14px; -webkit-border-top-left-radius: 14px; }
 #content .panel .intro { padding-top: 5px; padding-left: 10px; }
 #content .panel .intro h4 { font-weight: normal; color: #fff; }
 #content .panel .intro p a { color: #7f95ff; }
@@ -430,10 +429,3 @@ body.generalinfo #content .panel .panel-body p.collaborator span.email, body.gen
 .quickstart #content p.note { font-size: 14px; margin-left: 15px; }
 .quickstart #content h3.nextstep { text-align: center; margin-top: 30px; color: #8d79f2; }
 
-@font-face { font-family: "Hybrea"; font-weight: normal; src: local("Hybrea Light"), local("HybreaLt-Regular"), local("HybreaXl-Regular"), url("/fonts/hybrealight.otf") format("opentype"); }
-
-@font-face { font-family: "Hybrea Bold"; font-weight: normal; src: local("Hybrea"), local("Hybrea Regular"), local("HybreaRg-Regular"), local("Hybrea-Regular"), local("HybreaRg-Bold"), local("Hybrea-Bold"), local("Hybrea Bold"), url("/fonts/hybrea.otf") format("opentype"); }
-
-@font-face { font-family: "Corbel Bold"; font-weight: normal; src: local("Corbel Bold"), url("/fonts/corbelbold.ttf"); }
-
-@font-face { font-family: "Corbel"; font-weight: normal; src: local("Corbel"), local("Corbel Regular"), url("/fonts/corbel.ttf"); }
