@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       @title = "Sign up"
       @user.password = nil
       @user.password_confirmation = nil
-      render 'new'    
+      render 'new'
     end
   end
 end

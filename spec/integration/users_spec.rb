@@ -52,9 +52,9 @@ describe "Users" do
         fill_in :password, :with => user.password
         click_button
         controller.should be_signed_in
-        click_link "Sign out"
+        click_link "Logout"
         controller.should_not be_signed_in
       end
     end
-
   end
+end

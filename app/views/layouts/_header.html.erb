@@ -4,14 +4,17 @@
 %>
 <div id="header">
   <%= link_to logo, root_path %>
-  <ul class="navigation round">
-    <li><%= link_to( 'Home', root_path ) %></li>
-    <li><%= link_to( 'Help', help_path )%></li>
+  <ul class="account-links inline">
     <% if signed_in? %>
       <li><%= link_to "Profile", current_user %></li>
       <li><%= link_to "Logout", signout_path, :method => :delete %></li>
     <% else %>
-      <li><%= link_to "Login", signin_path %></li>
+      <li id ="account_login"><%= link_to "Login", signin_path %></li>
     <% end %>
+  </ul>
+  <ul class="info-links inline">
+    <li><%= link_to( 'Home', root_path ) %></li>
+    <li><%= link_to( 'Help', help_path )%></li>
+
   </ul>
 </div>
