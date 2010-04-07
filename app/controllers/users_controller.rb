@@ -14,9 +14,12 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       redirect_to @user
+      flash[:success] = "Welcome to my world"
     else
       @title = "Sign up"
-      render 'new'
+      @user.password = nil
+      @user.password_confirmation = nil
+      render 'new'    
     end
   end
 end
